@@ -9,3 +9,6 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 - Chercher les patients
 - Supprimer un patient
 - Faire des améliorations supplémentaires
+
+## Affichage de BD:
+ ![alt text](image/image.png)
