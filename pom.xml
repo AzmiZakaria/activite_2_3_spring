@@ -5,16 +5,6 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-<<<<<<< HEAD
-        <version>3.4.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-    <groupId>ma.enset</groupId>
-    <artifactId>gestion_pation</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>gestion_pation</name>
-    <description>gestion_pation</description>
-=======
         <version>3.2.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
@@ -23,7 +13,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>GestionPatient</name>
     <description>GestionPatient</description>
->>>>>>> 04365a4 (list patient)
     <url/>
     <licenses>
         <license/>
@@ -38,11 +27,7 @@
         <url/>
     </scm>
     <properties>
-<<<<<<< HEAD
-        <java.version>23</java.version>
-=======
         <java.version>17</java.version>
->>>>>>> 04365a4 (list patient)
     </properties>
     <dependencies>
         <dependency>
@@ -86,19 +71,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-<<<<<<< HEAD
-=======
                 <version>3.10.1</version> <!-- Add version -->
->>>>>>> 04365a4 (list patient)
                 <configuration>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-<<<<<<< HEAD
-=======
                             <version>${lombok.version}</version> <!-- Reference lombok version -->
->>>>>>> 04365a4 (list patient)
                         </path>
                     </annotationProcessorPaths>
                 </configuration>

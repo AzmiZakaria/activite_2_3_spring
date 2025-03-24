@@ -11,11 +11,7 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 - Faire des améliorations supplémentaires
 
 ## Affichage de BD:
-<<<<<<< HEAD
- ![alt text](image/image.png)
-=======
  ![alt text](image/image.png)
 
 ## Lister les patients
 ![alt text](image/list_patient.png)
->>>>>>> 04365a4 (list patient)
