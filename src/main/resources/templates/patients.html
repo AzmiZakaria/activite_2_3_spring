@@ -2,25 +2,38 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Patients List</title>
+    <title>Liste des Patients</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
 <body>
-<h1>List des Patients</h1>
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Date Naissance</th>
-        <th>Malade</th>
-        <th>Score</th>
-    </tr>
-    <tr th:each="patient : ${ListPatients}">
-        <td th:text="${patient.id}"></td>
-        <td th:text="${patient.nom}"></td>
-        <td th:text="${patient.dateNaissance}"></td>
-        <td th:text="${patient.malade}"></td>
-        <td th:text="${patient.score}"></td>
-    </tr>
-</table>
+<div class="container mt-5">
+    <h1 class="text-center mb-4 text-primary">Liste des Patients</h1>
+
+    <table class="table table-bordered table-striped table-hover shadow-sm">
+        <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Date de Naissance</th>
+            <th>Malade</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="patient : ${ListPatients}">
+            <td th:text="${patient.id}"></td>
+            <td th:text="${patient.nom}"></td>
+            <td th:text="${#dates.format(patient.dateNaissance, 'dd/MM/yyyy')}"></td>
+            <td>
+                    <span th:text="${patient.malade ? 'Oui' : 'Non'}"
+                          th:classappend="${patient.malade} ? 'text-danger fw-bold' : 'text-success fw-bold'"></span>
+            </td>
+            <td th:text="${patient.score}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
