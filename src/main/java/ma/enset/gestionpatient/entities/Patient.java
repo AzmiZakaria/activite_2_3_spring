@@ -3,6 +3,7 @@ package ma.enset.gestionpatient.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -18,4 +19,5 @@ public class Patient {
     private Date dateNaissance;
     private boolean malade;
     private int score;
+    private Collection<RenderVous> renderVous;
 }

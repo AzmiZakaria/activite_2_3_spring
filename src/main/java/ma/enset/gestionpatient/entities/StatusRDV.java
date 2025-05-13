@@ -1,7 +1,7 @@
-package ma.enset.bdcc.azmi.controlle.entities;
+package ma.enset.gestionpatient.entities;
 
-public enum RStatus {
+public enum StatusRDV {
     PENDING,
     VANLIDATED,
-    REJECTED
+    CANCELED
 }
