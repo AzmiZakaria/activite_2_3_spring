@@ -19,5 +19,6 @@ public class Patient {
     private Date dateNaissance;
     private boolean malade;
     private int score;
+    @OneToMany(mappedBy = "patient")
     private Collection<RenderVous> renderVous;
 }
