@@ -23,7 +23,7 @@ public class RenderVous {
     private Patient patient;
     @ManyToOne
     private Medecin medecin;
-    @OneToOne
+    @OneToOne(mappedBy = "renderVous")
     private Consultation consultation;
 
     private StatusRDV status;
