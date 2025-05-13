@@ -23,5 +23,34 @@ public class GestionPationApplication implements CommandLineRunner {
         patientRepository.save(new Patient(null,"zakaria",new Date(),false,50));
         patientRepository.save(new Patient(null,"achraf",new Date(),false,25));
         patientRepository.save(new Patient(null,"mourad",new Date(),true,100));
-    }
+
+        System.out.println("=== Consulter tous les patients ===");
+        patientRepository.findAll().forEach(p -> {
+            System.out.println(p.getNom() + " | Score: " + p.getScore());
+        });
+        System.out.println("=== Consulter un patient ===");
+        Patient p = patientRepository.findById(1L).orElse(null);
+        if (p != null) {
+            System.out.println("Patient avec id"+p.getId()+": " + p.getNom());
+        }
+        System.out.println("=== Chercher des patients avec nom contenant 'a' ===");
+        patientRepository.findByNomContains("a").forEach(pat -> {
+            System.out.println(pat.getNom());
+        });
+        System.out.println("=== Mettre à jour un patient  ===");
+        Patient patientToUpdate = patientRepository.findById(2L).orElse(null);
+        if (patientToUpdate != null) {
+            System.out.println("Patient avant mis a jour: " + patientToUpdate.getNom()+ " | score: " + patientToUpdate.getScore());
+            patientToUpdate.setScore(5);
+            patientRepository.save(patientToUpdate);
+            System.out.println("Patient mis à jour: " + patientToUpdate.getNom() + " | Nouveau score: " + patientToUpdate.getScore());
+        }
+        System.out.println("=== supprimer un patientt ===");
+        patientRepository.deleteById(3L);
+        System.out.println("Patient avec ID 3 supprimé.");
+        System.out.println("Consulter tous les patients");
+        patientRepository.findAll().forEach(pat -> {
+            System.out.println(pat.getNom() + " | Score: " + pat.getScore());
+        });
+       }
 }
