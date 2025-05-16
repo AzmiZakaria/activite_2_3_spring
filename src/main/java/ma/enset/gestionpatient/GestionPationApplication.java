@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Date;
+import java.util.stream.Stream;
 
 @SpringBootApplication
 public class GestionPationApplication implements CommandLineRunner {
@@ -20,10 +21,17 @@ public class GestionPationApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        patientRepository.save(new Patient(null,"zakaria",new Date(),false,50));
-//        patientRepository.save(new Patient(null,"achraf",new Date(),false,25));
-//        patientRepository.save(new Patient(null,"mourad",new Date(),true,100));
-//
+        Stream.of("zakaria", "achraf", "mourad").forEach(
+                nom -> {
+                    Patient patient = new Patient();
+                    patient.setNom(nom);
+                    patient.setDateNaissance(new Date());
+                    patient.setScore((int)(Math.random() * 100) + 1);
+                    patient.setMalade(patient.getScore() > 50);
+                    patientRepository.save(patient);
+                }
+        );
+
 //        System.out.println("=== Consulter tous les patients ===");
 //        patientRepository.findAll().forEach(p -> {
 //            System.out.println(p.getNom() + " | Score: " + p.getScore());

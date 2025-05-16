@@ -21,3 +21,17 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 
 ## Mapping des entités
 ![alt text](image/mapping_entity.png)
+
+## Migration vers MySql DB
+
+### ajout de dependence:
+![alt text](image/mysql_dependency.png)
+
+### ajout des propriété:
+![alt text](image/properties.png)
+
+### affichage de BD
+![alt text](image/patientdb_table_mysql.png)
+#### Affichage de table patient
+![alt text](image/patient_sql.png)
+
