@@ -59,3 +59,7 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 
 ### Ajout patient
 ![alt text](image/ajout_patient.png)
+
+### Validation d'ajout patient
+![alt text](image/validation_pation_ajout.png)
+

@@ -18,19 +18,22 @@
                         <div class="mb-3">
                             <label class="form-label">Nom :</label>
                             <input type="text" name="nom" class="form-control" th:value="${patient.nom}" required="required">
-                            <span th:errors="${patient.nom}"></span>
+                            <span class="text-danger" th:errors="${patient.nom}"></span>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Date de Naissance :</label>
-                            <input type="date" name="dateNaissance" class="form-control" required="required">
+                            <input type="date" name="dateNaissance" class="form-control" th:value="${patient.dateNaissance}" required="required">
+                            <span class="text-danger" th:errors="${patient.dateNaissance}"></span>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Score :</label>
-                            <input type="number" name="score" class="form-control" required="required">
+                            <input type="number" name="score" class="form-control" th:value="${patient.score}" required="required">
+                            <span class="text-danger" th:errors="${patient.score}"></span>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Malade :</label>
-                            <input type="checkbox" name="malade" class="form-check-input ms-2">
+                            <input type="checkbox" name="malade" th:value="${patient.malade}" class="form-check-input ms-2">
+                            <span class="text-danger" th:errors="${patient.malade}"></span>
                         </div>
                         <button type="submit" class="btn btn-primary">Enregistrer</button>
                     </form>
