@@ -24,12 +24,14 @@ public class PatientController {
     @GetMapping("/index")
     public String index(Model model,
                         @RequestParam(defaultValue = "0") int page,
-                        @RequestParam(defaultValue = "2") int size) {
+                        @RequestParam(defaultValue = "4") int size,
+                        @RequestParam(defaultValue = "") String search) {
 
-        Page<Patient> patientPage = hopitalService.findPatientsByPage(page, size);
+        Page<Patient> patientPage = hopitalService.searchPatientByKeywords(page, size, search);
         model.addAttribute("ListPatients", patientPage.getContent());
         model.addAttribute("pages", new int[patientPage.getTotalPages()]);
         model.addAttribute("currentPage", page);
+        model.addAttribute("search",search);
         return "patients";
     }
 

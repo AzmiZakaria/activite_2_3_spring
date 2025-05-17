@@ -32,7 +32,7 @@ public class GestionPationApplication{
     @Bean
     CommandLineRunner start(IHopitalService hopitalService) {
            return args -> {
-               Stream.of("zakaria", "achraf", "mourad").forEach(
+               Stream.of("zakaria", "achraf", "mourad", "imad", "asmaa", "rachid", "youssef", "fatima", "salma", "hamza", "sara", "ayoub", "nour", "khalid", "imane").forEach(
                        nom -> {
                            Patient patient = new Patient();
                            patient.setNom(nom);

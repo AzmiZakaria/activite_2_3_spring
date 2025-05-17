@@ -65,6 +65,11 @@ public class HopitalServiceImpl implements IHopitalService {
     }
 
     @Override
+    public Page<Patient> searchPatientByKeywords(int page, int size, String search) {
+        return patientRepository.findByNomContains(search, PageRequest.of(page, size));
+    }
+
+    @Override
     public Medecin findByIDMedecin(Long id) {
         return medecinRepository.findById(id).orElse(null);
     }
