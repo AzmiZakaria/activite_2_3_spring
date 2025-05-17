@@ -3,6 +3,7 @@ package ma.enset.gestionpatient.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
@@ -11,6 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +21,6 @@ public class Patient {
     private Date dateNaissance;
     private boolean malade;
     private int score;
-    @OneToMany(mappedBy = "patient")
-    private Collection<RenderVous> renderVous;
+    @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
+    private Collection<RenderVous> renderVous=new ArrayList<>();
 }

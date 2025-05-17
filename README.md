@@ -35,3 +35,7 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 #### Affichage de table patient
 ![alt text](image/patient_sql.png)
 
+### Creation de l'interface IhopitalService:
+![alt text](image/ihopitalservice.png)
+### Operation sur les entites
+![alt text](image/operation_all.png)
