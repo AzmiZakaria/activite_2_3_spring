@@ -14,7 +14,7 @@
             <div class="card">
                 <div class="card-header">Nouveau Patient</div>
                 <div class="card-body">
-                    <form method="post" th:action="@{/save}">
+                    <form method="post" th:action="@{/admin/save}">
                         <div class="mb-3">
                             <label class="form-label">Nom :</label>
                             <input type="text" name="nom" class="form-control" th:value="${patient.nom}" required="required">

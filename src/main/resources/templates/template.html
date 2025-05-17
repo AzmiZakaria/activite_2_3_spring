@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/index}">Gestion Hopital</a>
+        <a class="navbar-brand" th:href="@{/user/index}">Gestion Hopital</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -19,10 +19,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto flex-column flex-lg-row">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/index}">Patients</a>
+                    <a class="nav-link" th:href="@{/user/index}">Patients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/addPatient}">Ajouter Patient</a>
+                    <a class="nav-link" th:href="@{/admin/addPatient}">Ajouter Patient</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -33,7 +33,7 @@
                         <span th:text="${#authentication?.name}">User</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" th:href="@{/profile}">Profile</a></li>
+                        <li><a class="dropdown-item" th:href="@{/user/profile}">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <form th:action="@{/logout}" method="post" style="margin-bottom: 0;">

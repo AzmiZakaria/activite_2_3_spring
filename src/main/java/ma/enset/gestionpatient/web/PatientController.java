@@ -24,7 +24,7 @@ public class PatientController {
     private final IHopitalService hopitalService;
 
 
-    @GetMapping("/index")
+    @GetMapping("/user/index")
     public String index(Model model,
                         @RequestParam(defaultValue = "0") int page,
                         @RequestParam(defaultValue = "4") int size,
@@ -37,26 +37,26 @@ public class PatientController {
         model.addAttribute("search",search);
         return "patients";
     }
-    @GetMapping("/delete")
+    @GetMapping("/admin/delete")
     public String delete(Long id,String search, int page) {
         hopitalService.deletePatient(id);
-        return "redirect:/index?page="+page+"&search="+search;
+        return "redirect:/user/index?page="+page+"&search="+search;
     }
-    @GetMapping("/addPatient")
+    @GetMapping("/admin/addPatient")
     public String formPatient(Model model) {
         model.addAttribute("patient", new Patient());
         return "FormPatients";
     }
-    @PostMapping(path="/save")
+    @PostMapping(path="/admin/save")
     public String save(Model model, @Valid Patient patient, BindingResult bindingResult,
                        @RequestParam(defaultValue = "0") int page,
                        @RequestParam(defaultValue = "") String search) {
         if (bindingResult.hasErrors()) return "FormPatients";
         hopitalService.savePatient(patient);
-        return "redirect:/index?page="+page+"&search="+search;
+        return "redirect:/user/index?page="+page+"&search="+search;
     }
 
-    @GetMapping("/editPatient")
+    @GetMapping("/admin/editPatient")
     public String editPatient(Model model,Long id,String search, int page) {
         Patient patient= hopitalService.findByIDPatient(id);
         if (patient==null) throw new RuntimeException("Patient introuvable");
@@ -68,7 +68,7 @@ public class PatientController {
     }
     @GetMapping("/")
     public String home(Model model) {
-        return "redirect:/index";
+        return "redirect:/user/index";
     }
 
 

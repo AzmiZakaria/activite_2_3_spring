@@ -12,7 +12,7 @@
     <div layout:fragment="content">
         <div class="container mt-5">
             <h1 class="text-center mb-4 text-primary">Liste des Patients</h1>
-            <form class="mb-4" method="get" th:action="@{/index}">
+            <form class="mb-4" method="get" th:action="@{/user/index}">
                 <div class="d-flex justify-content-end">
                     <div class="input-group w-auto">
                         <input type="text" class="form-control form-control-sm" name="search" placeholder="Rechercher"
@@ -44,9 +44,9 @@
                     <td th:text="${patient.score}"></td>
                     <td>
                         <a onclick="return confirm('etes vous sur?')" 
-                        th:href="@{delete(id=${patient.id} , page=${currentPage}, search=${search})}"
+                        th:href="@{/admin/delete(id=${patient.id} , page=${currentPage}, search=${search})}"
                         class="btn btn-sm btn-danger">Supprimer <i class="bi bi-trash"></i></a>
-                        <a th:href="@{editPatient(id=${patient.id}, page=${currentPage}, search=${search})}"
+                        <a th:href="@{/admin/editPatient(id=${patient.id}, page=${currentPage}, search=${search})}"
                         class="btn btn-sm btn-success">Modifier <i class="bi bi-pencil"></i></a>
                     </td>
                 </tr>
@@ -57,7 +57,7 @@
                     <li th:each="page, status : ${pages}"
                         th:classappend="${currentPage == status.index} ? 'active' : ''"
                         class="page-item">
-                        <a th:href="@{/index(page=${status.index},search=${search})}"
+                        <a th:href="@{/user/index(page=${status.index},search=${search})}"
                         th:text="${status.index + 1}"
                         class="page-link"></a>
                     </li>
