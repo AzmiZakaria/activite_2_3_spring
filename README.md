@@ -45,5 +45,5 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 ### Patient pagination
 ![alt text](image/patientPagination.png)
 
-
-
+### Recherche par Keyword
+![alt text](image/patient_keyword.png)
