@@ -39,6 +39,7 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 ![alt text](image/operation_all.png)
 
 ## Activité 3:
+## Partie 1
 ### Lister les patients
 ![alt text](image/list_patient.png)
 
@@ -50,3 +51,7 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 
 ### Supprimer patient
 ![alt text](image/patient_delete.png)
+
+## Partie 2
+### Creation de page template
+![alt text](image/template_page.png)
