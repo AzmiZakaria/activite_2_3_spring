@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Patients</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-header">Nouveau Patient</div>
+                <div class="card-body">
+                    <form method="post" th:action="@{/save}">
+                        <div class="mb-3">
+                            <label class="form-label">Nom :</label>
+                            <input type="text" name="nom" class="form-control" th:value="${patient.nom}" required="required">
+                            <span th:errors="${patient.nom}"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Date de Naissance :</label>
+                            <input type="date" name="dateNaissance" class="form-control" required="required">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Score :</label>
+                            <input type="number" name="score" class="form-control" required="required">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Malade :</label>
+                            <input type="checkbox" name="malade" class="form-check-input ms-2">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -2,6 +2,7 @@ package ma.enset.gestionpatient.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,6 +19,7 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateNaissance;
     private boolean malade;
     private int score;

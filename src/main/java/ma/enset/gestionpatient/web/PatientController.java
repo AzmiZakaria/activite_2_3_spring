@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -38,6 +39,16 @@ public class PatientController {
     public String delete(Long id,String search, int page) {
         hopitalService.deletePatient(id);
         return "redirect:/index?page="+page+"&search="+search;
+    }
+    @GetMapping("/addPatient")
+    public String formPatient(Model model) {
+        model.addAttribute("patient", new Patient());
+        return "FormPatients";
+    }
+    @PostMapping(path="/save")
+    public String save(Model model,Patient patient) {
+        hopitalService.savePatient(patient);
+        return "FormPatients";
     }
 
 
