@@ -17,7 +17,7 @@ public interface IHopitalService {
     List<Patient> findAllPatients();
     Page<Patient> findPatientsByPage(int page, int size);
     Page<Patient> searchPatientByKeywords(int page, int size, String search);
-
+    void deletePatient(Long id);
 
     Medecin saveMedecin(Medecin medecin);
     Medecin findByIDMedecin(Long id);
@@ -30,4 +30,5 @@ public interface IHopitalService {
     Consultation saveConsultation(Consultation consultation);
     Consultation findByIDConsultation(Long id);
     List<Consultation> findAllConsultations();
+
 }

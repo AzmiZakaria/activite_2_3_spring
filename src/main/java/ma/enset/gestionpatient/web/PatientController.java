@@ -34,6 +34,11 @@ public class PatientController {
         model.addAttribute("search",search);
         return "patients";
     }
+    @GetMapping("/delete")
+    public String delete(Long id,String search, int page) {
+        hopitalService.deletePatient(id);
+        return "redirect:/index?page="+page+"&search="+search;
+    }
 
 
 }

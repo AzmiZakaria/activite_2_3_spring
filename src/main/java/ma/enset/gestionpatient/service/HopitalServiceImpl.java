@@ -70,6 +70,11 @@ public class HopitalServiceImpl implements IHopitalService {
     }
 
     @Override
+    public void deletePatient(Long id) {
+        patientRepository.deleteById(id);
+    }
+
+    @Override
     public Medecin findByIDMedecin(Long id) {
         return medecinRepository.findById(id).orElse(null);
     }
