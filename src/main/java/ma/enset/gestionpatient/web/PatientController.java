@@ -48,10 +48,23 @@ public class PatientController {
         return "FormPatients";
     }
     @PostMapping(path="/save")
-    public String save(Model model, @Valid Patient patient, BindingResult bindingResult) {
+    public String save(Model model, @Valid Patient patient, BindingResult bindingResult,
+                       @RequestParam(defaultValue = "0") int page,
+                       @RequestParam(defaultValue = "") String search) {
         if (bindingResult.hasErrors()) return "FormPatients";
         hopitalService.savePatient(patient);
-        return "redirect:/index";
+        return "redirect:/index?page="+page+"&search="+search;
+    }
+
+    @GetMapping("/editPatient")
+    public String editPatient(Model model,Long id,String search, int page) {
+        Patient patient= hopitalService.findByIDPatient(id);
+        if (patient==null) throw new RuntimeException("Patient introuvable");
+        model.addAttribute("patient", patient);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("search", search);
+        
+        return "editPatient";
     }
 
 
