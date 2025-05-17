@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.swing.Painter;
 
+import org.springframework.data.domain.Page;
+
 import ma.enset.gestionpatient.entities.Consultation;
 import ma.enset.gestionpatient.entities.Medecin;
 import ma.enset.gestionpatient.entities.Patient;
@@ -13,6 +15,8 @@ public interface IHopitalService {
     Patient savePatient(Patient patient);
     Patient findByIDPatient(Long id);
     List<Patient> findAllPatients();
+    Page<Patient> findPatientsByPage(int page, int size);
+
 
     Medecin saveMedecin(Medecin medecin);
     Medecin findByIDMedecin(Long id);

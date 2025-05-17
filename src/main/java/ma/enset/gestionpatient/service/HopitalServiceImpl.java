@@ -8,6 +8,8 @@ import ma.enset.gestionpatient.repository.ConsultationRepository;
 import ma.enset.gestionpatient.repository.MedecinRepository;
 import ma.enset.gestionpatient.repository.PatientRepository;
 import ma.enset.gestionpatient.repository.RenderVousRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -58,6 +60,11 @@ public class HopitalServiceImpl implements IHopitalService {
     }
 
     @Override
+    public Page<Patient> findPatientsByPage(int page, int size) {
+        return patientRepository.findAll(PageRequest.of(page, size));
+    }
+
+    @Override
     public Medecin findByIDMedecin(Long id) {
         return medecinRepository.findById(id).orElse(null);
     }
@@ -86,4 +93,5 @@ public class HopitalServiceImpl implements IHopitalService {
     public List<Consultation> findAllConsultations() {
         return consultationRepository.findAll();
     }
+
 }
