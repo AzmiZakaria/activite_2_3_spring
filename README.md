@@ -89,3 +89,17 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 
 ### Creation des entités User et Role
 ![alt text](image/entities_security.png)
+
+### Test UserDetailsService
+
+#### App user table
+![alt text](image/app_user.png)
+
+#### App user roles table
+![alt text](image/app_user_roles.png)
+
+#### Login avec user 15 stocke dans App_user table
+![alt text](image/user15_login.png)
+
+#### user 15 connecté avec succes 
+![alt text](image/user15_admin.png)
