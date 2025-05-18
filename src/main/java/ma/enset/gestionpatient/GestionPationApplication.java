@@ -52,7 +52,9 @@ public class GestionPationApplication{
            accountService.addRoleToUser("admin","USER");
            accountService.addRoleToUser("admin","ADMIN");
 
-      
+           accountService.addNewUser("user15","1234","user1@gmail.com","1234");
+           accountService.addRoleToUser("user15","USER");
+
         } catch (Exception e) {
            e.printStackTrace();}
 

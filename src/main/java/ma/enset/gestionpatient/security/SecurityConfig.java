@@ -3,6 +3,7 @@ package ma.enset.gestionpatient.security;
 import javax.sql.DataSource;
 import javax.xml.crypto.Data;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +12,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
@@ -18,10 +20,11 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
+@AllArgsConstructor
 // @EnableMethodSecurity
 public class SecurityConfig {
-    @Autowired
     private PasswordEncoder passwordEncoder;
+    private UserDetailsService userDetailsService;
 
 //    @Bean
     public JdbcUserDetailsManager userDetailsManager(DataSource dataSource){
@@ -45,6 +48,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(ar -> ar.requestMatchers("/admin/**").hasRole("ADMIN"))
                 .authorizeHttpRequests(ar -> ar.requestMatchers("/user/**").hasRole("USER"))
                 .authorizeHttpRequests(ar -> ar.anyRequest().authenticated())
+                .userDetailsService(userDetailsService)
                 .exceptionHandling(exception -> exception
                         .accessDeniedPage("/notAuthenticated")
                 );
