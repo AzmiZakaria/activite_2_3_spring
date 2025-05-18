@@ -19,5 +19,8 @@ public class SecurityController {
     public String notAuthenticated() {
         return "notAuthenticated";
     }
-
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
 }

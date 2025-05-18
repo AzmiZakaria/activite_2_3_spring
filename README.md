@@ -66,10 +66,14 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 ### Modifier un patient 
 ![alt text](image/edit_patient.png)
 
-## Partie 3
-
+## Partie 3 
+## 1. InMemomy Authentication
 ### Redirection en cas de non autorisation
 ![alt text](image/NOTATHORIZED.png)
 
 ### Masquer fonctionalité d'Admin
 ![alt text](image/user1_patientlist_acces.png)
+
+### Custum login interface
+![alt text](image/login.png)
+
