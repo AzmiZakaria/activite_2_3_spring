@@ -19,13 +19,11 @@ import java.util.List;
 public class AppUser {
     @Id
     private String userId;
-    @NotEmpty @Size(min = 3, max = 50) @Column(unique = true)
+    @Column(unique = true)
     private String username;
-    @NotEmpty @Size(min = 3, max = 50)
     private String password;
-    @NotEmpty @Email
     private String email;
     @ManyToMany(fetch = FetchType.EAGER)
-    private List<AppRole> roles;
+    private List<AppRole> roles=new ArrayList<>();
 
 }

@@ -23,7 +23,7 @@ public class SecurityConfig {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Bean
+//    @Bean
     public JdbcUserDetailsManager userDetailsManager(DataSource dataSource){
     return new JdbcUserDetailsManager(dataSource);
     }
