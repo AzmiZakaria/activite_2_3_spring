@@ -1,5 +1,8 @@
 package ma.enset.gestionpatient.security;
 
+import javax.sql.DataSource;
+import javax.xml.crypto.Data;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -18,7 +22,12 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     @Autowired
     private PasswordEncoder passwordEncoder;
+
     @Bean
+    public JdbcUserDetailsManager userDetailsManager(DataSource dataSource){
+    return new JdbcUserDetailsManager(dataSource);
+    }
+//    @Bean
     public InMemoryUserDetailsManager inMemoryUserDetailsManager(){
         return new InMemoryUserDetailsManager(
                 User.withUsername("admin").password(passwordEncoder.encode("admin")).roles("USER","ADMIN").build(),

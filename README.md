@@ -77,3 +77,10 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 ### Custum login interface
 ![alt text](image/login.png)
 
+## 2. JDBC Authentication
+
+### Table authorities
+![alt text](image/autotities_mysql.png)
+
+### Table users
+![alt text](image/users_mysql.png)
