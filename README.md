@@ -65,3 +65,8 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 
 ### Modifier un patient 
 ![alt text](image/edit_patient.png)
+
+## Partie 3
+
+### Redirection en cas de non autorisation
+![alt text](image/NOTATHORIZED.png)

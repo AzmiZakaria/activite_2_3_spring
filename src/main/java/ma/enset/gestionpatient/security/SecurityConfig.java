@@ -29,10 +29,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .formLogin(Customizer.withDefaults())
-                .authorizeHttpRequests(ar->ar.requestMatchers("/admin/**").hasRole("ADMIN"))
-                .authorizeHttpRequests(ar->ar.requestMatchers("/user/**").hasRole("USER"))
-                .authorizeHttpRequests(ar->ar.anyRequest().authenticated());
+                .authorizeHttpRequests(ar -> ar.requestMatchers("/admin/**").hasRole("ADMIN"))
+                .authorizeHttpRequests(ar -> ar.requestMatchers("/user/**").hasRole("USER"))
+                .authorizeHttpRequests(ar -> ar.anyRequest().authenticated())
+                .exceptionHandling(exception -> exception
+                        .accessDeniedPage("/notAuthenticated")
+                );
         return httpSecurity.build();
-
     }
 }
