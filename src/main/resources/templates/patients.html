@@ -29,7 +29,7 @@
                     <th>Date de Naissance</th>
                     <th>Malade</th>
                     <th>Score</th>
-                    <th >Actions</th>
+                    <th sec:authorize="hasRole('ADMIN')" >Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -42,7 +42,7 @@
                                 th:classappend="${patient.malade} ? 'text-danger fw-bold' : 'text-success fw-bold'"></span>
                     </td>
                     <td th:text="${patient.score}"></td>
-                    <td >
+                    <td sec:authorize="hasRole('ADMIN')" >
                         <a onclick="return confirm('etes vous sur?')" 
                         th:href="@{/admin/delete(id=${patient.id} , page=${currentPage}, search=${search})}"
                         class="btn btn-sm btn-danger">Supprimer <i class="bi bi-trash"></i></a>

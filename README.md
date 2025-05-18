@@ -70,3 +70,6 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 
 ### Redirection en cas de non autorisation
 ![alt text](image/NOTATHORIZED.png)
+
+### Masquer fonctionalité d'Admin
+![alt text](image/user1_patientlist_acces.png)
