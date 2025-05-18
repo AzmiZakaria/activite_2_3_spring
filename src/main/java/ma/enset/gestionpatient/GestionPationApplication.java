@@ -68,7 +68,7 @@ public class GestionPationApplication{
         };
    }
 
-    @Bean
+//    @Bean
     CommandLineRunner start(IHopitalService hopitalService) {
            return args -> {
                Stream.of("zakaria", "achraf", "mourad", "imad", "asmaa", "rachid", "youssef", "fatima", "salma", "hamza", "sara", "ayoub", "nour", "khalid", "imane").forEach(

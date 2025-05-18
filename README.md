@@ -84,3 +84,8 @@ Gestion Pation est un projet conçu pour gérer les informations des patients de
 
 ### Table users
 ![alt text](image/users_mysql.png)
+
+## 3. UserDetails Service
+
+### Creation des entités User et Role
+![alt text](image/entities_security.png)
